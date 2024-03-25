@@ -57,7 +57,6 @@ public class Person {
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     @Override
     public String toString() {
         return "Person{" +
@@ -66,5 +65,4 @@ public class Person {
                 ", phone='" + phone + '\'' +
                 '}';
     }
-
 }

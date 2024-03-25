@@ -27,8 +27,4 @@ public class Cylinder extends Circle { // Kế thừa của lớp cha
                 "height=" + height +
                 '}';
     }
-
-
-
-
 }
