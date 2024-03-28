@@ -27,8 +27,8 @@ public class MovablePoint implements Movable{ // implements kế thừa interfac
     public void moveRight() {
         x++;
     }
-    @Override
-    public String toString() {
-        return "MovablePoint{" + "x=" + x + ", y=" + y + '}';
+    public void Display() {
+        System.out.println("MovablePoint at ("+ x +","+ y +")");
     }
+
 }
