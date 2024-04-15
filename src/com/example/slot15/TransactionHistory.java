@@ -10,6 +10,7 @@ public class TransactionHistory {
     private String beneficiaryAccount;
     private long money;
 
+
     public TransactionHistory(String description, String beneficiaryAccount, long money) {
         this.id = IdGenerate.getNewId();
         this.dayTrading = LocalDate.now();
@@ -17,11 +18,19 @@ public class TransactionHistory {
         this.beneficiaryAccount = beneficiaryAccount;
         this.money = money;
     }
+
+    public TransactionHistory() {
+
+    }
+
     public String getBeneficiaryAccount(){ return beneficiaryAccount; }
 
     public void setBeneficiaryAccount(String beneficiaryAccount){ this.beneficiaryAccount = beneficiaryAccount; }
     public Long getId(){ return id; }
+    public void setId(Long id){ this.id = id; }
     public LocalDate getDayTrading(){ return dayTrading; }
+
+    public void setDayTrading(LocalDate dayTrading) { this.dayTrading = dayTrading;}
 
     public String getDescription(){ return description; }
 

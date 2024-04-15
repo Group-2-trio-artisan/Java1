@@ -32,7 +32,6 @@ public class Application {
                     controller.actionTransfer();
                     break;
                 case 3:
-                    System.out.println("Lịch sử giao dịch: ");
                     controller.getHistory();
                     break;
                 case 0:
@@ -47,10 +46,10 @@ public class Application {
     }
 
     public static void menu() {
-        System.out.println("Lựa chọn của ban: ");
         System.out.println("1 : Xem số dư tài khoản");
         System.out.println("2 : Chuyển khoản");
         System.out.println("3 : Xem lich sử giao dịch");
         System.out.println("0 : Thoát");
+        System.out.println("Lựa chọn của ban: ");
     }
 }
