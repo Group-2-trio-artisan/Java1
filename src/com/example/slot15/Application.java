@@ -29,7 +29,7 @@ public class Application {
                     System.out.println(Controller.formatMoney(balance));
                     break;
                 case 2:
-                    controller.actionTransfer();
+                    Controller.actionTransfer();
                     break;
                 case 3:
                     controller.getHistory();
