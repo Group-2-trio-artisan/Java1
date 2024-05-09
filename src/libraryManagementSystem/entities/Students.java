@@ -1,4 +1,4 @@
 package libraryManagementSystem.entities;
 
-public class Borrowers {
+public class Students {
 }

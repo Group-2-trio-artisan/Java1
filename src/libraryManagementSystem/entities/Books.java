@@ -1,5 +1,6 @@
 package libraryManagementSystem.entities;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Books {
@@ -7,14 +8,14 @@ public class Books {
     private String title;
     private String author;
     private String genre;
-    private int price;
+    private double price;
     private Date entry_date;
     private String status;
 
     public Books() {
     }
 
-    public Books(int id, String title, String author, String genre, int price, Date entry_date, String status) {
+    public Books(int id, String title, String author, String genre, double price, Date entry_date, String status) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -56,16 +57,16 @@ public class Books {
         this.genre = genre;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public java.sql.Date getEntry_date() {
-        return entry_date;
+    public java.sql.Date getEntry_date(Timestamp timestamp) {
+        return (java.sql.Date) entry_date;
     }
 
     public void setEntry_date(Date entry_date) {
