@@ -9,13 +9,12 @@ public class Product extends Entity<Integer> {
         super(null);
     }
 
-    public Product(int productId, String name, String description, double price) {
-        super(productId);
+    public Product( String name, String description, double price) {
+        super(null);
         this.name = name;
         this.description = description;
         this.price = price;
     }
-
 
     public String getName() {
         return name;

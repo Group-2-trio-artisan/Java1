@@ -1,4 +1,4 @@
-package session12.model;
+package session12;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

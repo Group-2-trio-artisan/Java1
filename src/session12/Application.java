@@ -9,10 +9,8 @@ import session12.model.ProductDAOImpl;
 import java.sql.SQLException;
 
 public class Application {
-    public static void main(String[] args) throws SQLException {
-        GenericDAO<Product> ProductDAOImpl = new ProductDAOImpl();
-        Controller<Product> productController = new Controller<>(ProductDAOImpl);
-        View view = new View(productController);
+    public static void main(String[] args) throws SQLException, IllegalAccessException {
+        View view = new View();
         view.start();
     }
 }

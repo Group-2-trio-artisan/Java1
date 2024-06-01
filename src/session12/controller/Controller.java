@@ -2,19 +2,20 @@ package session12.controller;
 
 import session12.entity.Entity;
 import session12.model.GenericDAO;
+import session12.model.Model;
 import session12.model.ProductDAOImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class Controller<T extends Entity<?>> {
-    private GenericDAO<T> model;
+    private Model model = new Model<>();
 
-    public Controller(GenericDAO<T> model) throws SQLException {
+    public Controller(Model model) throws SQLException {
         this.model = model;
     }
 
-    public void addEntity(T entity) throws SQLException {
+    public void addEntity(Entity entity) throws SQLException, IllegalAccessException {
         model.create(entity);
     }
     public void updateEntity(T entity) throws SQLException {
@@ -29,6 +30,6 @@ public class Controller<T extends Entity<?>> {
     }
 
     public T getById(int bookId) throws SQLException {
-        return model.getById(bookId);
+        return (T) model.getById(bookId);
     }
 }

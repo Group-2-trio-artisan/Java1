@@ -1,17 +1,18 @@
 package session12.View;
 
-import libraryManagementSystem.entities.Books;
 import session12.controller.Controller;
 import session12.entity.Product;
+import session12.model.Model;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
 public class View {
-    Controller<Product> productController;
+    Model<Product> productModel = new Model<>();
+    Controller<Product> productController = new Controller<>(productModel);
 
-    public View(Controller<Product> productController) throws SQLException {
+    public View() throws SQLException {
         this.productController = productController;
     }
     private final Scanner sc = new Scanner(System.in);
@@ -27,16 +28,14 @@ public class View {
             System.out.println(product.getPrice());
         });
     }
-    public void addNewProductUI() throws SQLException {
-        System.out.println("Enter Product ID: ");
-        int productId = Integer.parseInt(sc.nextLine());
+    public void addNewProductUI() throws SQLException, IllegalAccessException {
         System.out.println("Enter product name : ");
         String name = sc.nextLine();
         System.out.println("Enter product desc : ");
         String product_desc = sc.nextLine();
         System.out.println("Enter price: ");
         double price = Double.parseDouble(sc.nextLine());
-        Product product = new Product(productId,name,product_desc,price);
+        Product product = new Product(name,product_desc,price);
         productController.addEntity(product);
     }
     public void updateProductUI() throws SQLException {
@@ -84,7 +83,7 @@ public class View {
         int choice = Integer.parseInt(sc.nextLine());
         return choice;
     }
-    public void start() throws SQLException{
+    public void start() throws SQLException, IllegalAccessException {
         while (true){
             int choice = menu();
             switch (choice){
